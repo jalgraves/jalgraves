@@ -1,0 +1,48 @@
+{
+  "name": "jalgraves",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=14.17.6 <18"
+  },
+  "scripts": {
+    "start": "node --trace-warnings -r ./bin/server",
+    "build": "npx webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "axios": "^0.21.4",
+    "debug": ">=4.1.1",
+    "ejs": ">=3.1.7",
+    "express": ">=4.17.1",
+    "http-errors": ">=1.7.1",
+    "morgan": "~1.9.1",
+    "react-slick": "^0.25.2",
+    "react-slideshow-image": "^1.4.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "@babel/preset-react": "^7.8.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.26",
+    "@fortawesome/free-brands-svg-icons": "^5.11.2",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.7",
+    "@types/node": "^13.1.8",
+    "animejs": "^3.1.0",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "core-js": "^3.6.4",
+    "eslint": "^8.23.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-hook-form": "^5.1.1",
+    "react-loader-spinner": "^3.1.5",
+    "react-router": "^6.2.1",
+    "react-router-dom": "^6.2.1",
+    "styled-components": "^5.0.0",
+    "universal-cookie": "^4.0.3",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^3.3.12"
+  }
+}

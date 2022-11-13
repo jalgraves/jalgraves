@@ -1,0 +1,111 @@
+{
+    "static_url": "https://static.dev.beantownpub.com",
+    "urls": {
+        "googleApi": "https://maps.googleapis.com/maps/api/",
+        "contactApi": "https://contact-api.jalgraves.com/v1/contact/beantown",
+        "static": "https://static.dev.beantownpub.com",
+        "github": "https://github.com/jalgraves",
+        "instagram": "https://www.instagram.com/thehubpub/",
+        "twitter": "https://twitter.com/thehubpub"
+    },
+    "colors": {
+        "backgroundGray": "#F3F4F4",
+        "backgroundWhite": "whitesmoke",
+        "black": "#000000",
+        "blue": "#1f6696",
+        "borderGray": "#dbd9d9",
+        "boxShadowGray": "rgb(126 137 140 / 20%)",
+        "darkGray": "#383838",
+        "dimGray": "#696969",
+        "dodgerBlue": "#1e90ff",
+        "gray": "#494040",
+        "hubPubBlue": "#1e90ff",
+        "lightGray": "#F3F4F4",
+        "navBarBlue": "rgba(5,46,102,0.90)",
+        "red": "#ed1c24",
+        "shadowGray": "rgb(147 147 147 / 25%)",
+        "white": "whitesmoke",
+        "yellow": "#fcba03"
+    },
+    "fonts": {
+        "headers": "'Poppins', sans-sefif",
+        "content": "'Lato', sans-serif",
+        "headline": "'Poppins', sans-serif",
+        "gothamUltra": "'gotham-narrow-ultra', sans-sefif",
+        "script": "'satisfy', sans-serif"
+    },
+    "pages": {
+        "index": {
+            "name": "/",
+            "icon": "faHome",
+            "text": "Home",
+            "menu_list": true,
+            "top_menu": false,
+            "metadata": {
+                "title": "Jalgraves",
+                "description": "Jonny Graves' website",
+                "keywords": "tech, technology, devops, terraform, linux, kubernetes, helm, k8s, aws, istio, kubeadm, kubectl, blog, tutorials, resume, engineer"
+            }
+        },
+        "about": {
+            "name": "about",
+            "icon": "faInfo",
+            "text": "About",
+            "menu_list": true,
+            "top_menu": true,
+            "metadata": {
+                "title": "About Me",
+                "description": "Information about Jonny Graves",
+                "keywords": ""
+            }
+        },
+        "contact": {
+            "name": "contact",
+            "icon": "faEnvelope",
+            "text": "Contact",
+            "menu_list": true,
+            "top_menu": true,
+            "metadata": {
+                "title": "Contact Me",
+                "description": "Contact Jonny Graves",
+                "keywords": ""
+            }
+        },
+        "blog": {
+            "name": "blog",
+            "icon": "faUtensils",
+            "text": "Blog",
+            "menu_list": true,
+            "top_menu": true,
+            "metadata": {
+                "title": "Jal's Blog",
+                "description": "Stuff I write about",
+                "keywords": "tech, technology, devops, terraform, linux, kubernetes, helm, k8s, aws, istio, kubeadm, kubectl, blog, tutorials, resume, engineer"
+            }
+        },
+        "resume": {
+            "name": "resume",
+            "icon": "faUsers",
+            "text": "Resume",
+            "menu_list": true,
+            "top_menu": true,
+            "metadata": {
+                "title": "Hire Me",
+                "description": "Jonny Graves' resume",
+                "keywords": ""
+            }
+        },
+        "github": {
+            "name": "https://github.com/jalgraves",
+            "icon": "faGithub",
+            "text": "GitHub",
+            "menu_list": true,
+            "top_menu": false,
+            "metadata": {
+                "title": "Jonny Graves' GitHub Profile",
+                "description": "",
+                "keywords": ""
+            }
+        }
+    }
+}

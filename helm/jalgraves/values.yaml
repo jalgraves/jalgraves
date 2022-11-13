@@ -1,0 +1,15 @@
+image:
+  repository: jalgraves/jalgraves
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+containerPort: 5033
+
+ingress:
+  enabled: false
+
+logLevel: tiny
+
+nodeEnv: ""
+

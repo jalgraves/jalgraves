@@ -1,0 +1,44 @@
+{
+    "sections": {
+        "home": {
+            "template": "index",
+            "metadata": {
+                "title": "Jalgraves",
+                "description": "My thin slice of the web",
+                "keywords": "tech, technology, devops, terraform, linux, kubernetes, helm, k8s, aws, istio, kubeadm, kubectl, blog, tutorials, resume, engineer"
+            }
+        },
+        "blog": {
+            "template": "index",
+            "metadata": {
+                "title": "blog",
+                "description": "Stuff I write about",
+                "keywords": "tech, technology, devops, terraform, linux, kubernetes, helm, k8s, aws, istio, kubeadm, kubectl, blog, tutorials, resume, engineer"
+            }
+        },
+        "about": {
+            "template": "index",
+            "metadata": {
+                "title": "About me",
+                "description": "",
+                "keywords": ""
+            }
+        },
+        "contact": {
+            "template": "index",
+            "metadata": {
+                "title": "Contact me",
+                "description": "",
+                "keywords": ""
+            }
+        },
+        "resume": {
+            "template": "index",
+            "metadata": {
+                "title": "resume",
+                "description": "",
+                "keywords": "devops, automation, terraform, ci/cd, ci, cd, kubernetes, k8s, helm, docker, argocd, vault, hashicorp, terraform cloud"
+            }
+        }
+    }
+}

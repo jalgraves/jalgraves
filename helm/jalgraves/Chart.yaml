@@ -1,0 +1,8 @@
+apiVersion: v2
+name: jalgraves
+description: Jalgraves.com frontend deployment
+type: application
+version: 0.1.0
+appVersion: 0.1.0-8e315a2
+sources:
+- https://github.com/jalgraves/jalgraves

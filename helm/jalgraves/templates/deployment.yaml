@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "jalgraves.fullname" . }}
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: {{ include "jalgraves.fullname" . }}
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: {{ include "jalgraves.fullname" . }}
+        version: {{ .Values.image.tag | default .Chart.AppVersion }}
+    spec:
+      containers:
+      - env:
+        - name: LOG_LEVEL
+          value: {{ .Values.logLevel }}
+      {{- if eq .Values.global.env "dev" }}
+        image: "jalgraves:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: Never
+      {{- else }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        imagePullPolicy: Always
+      {{- end }}
+        name: {{ include "jalgraves.fullname" . }}
+        ports:
+        - containerPort: {{ .Values.containerPort }}
+          name: tcp-jalgraves
+          protocol: TCP
+        securityContext:
+          allowPrivilegeEscalation: false
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        resources: {}
+        livenessProbe:
+          exec:
+            command:
+            - cat
+            - /app/package.json
+          initialDelaySeconds: 5
+          periodSeconds: 60
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: tcp-jalgraves
+          initialDelaySeconds: 15
+          failureThreshold: 3
+          periodSeconds: 10
