@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "thehubpub.fullname" . }}
+spec:
+  ports:
+  - name: "http-{{ .Values.containerPort }}"
+    port: {{ .Values.containerPort }}
+    targetPort: {{ include "thehubpub.targetPort" . }}
+  - name: http
+    port: 80
+    targetPort: {{ include "thehubpub.targetPort" . }}
+  selector: {{ include "thehubpub.selectorLabels" . | nindent 6 }}
