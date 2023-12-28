@@ -1,12 +1,12 @@
-# thehubpub
+# jalgraves
 
-![Version: 0.1.19](https://img.shields.io/badge/Version-0.1.19-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.19](https://img.shields.io/badge/AppVersion-0.1.19-informational?style=flat-square)
+![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.0-daf602a](https://img.shields.io/badge/AppVersion-0.1.0--daf602a-informational?style=flat-square)
 
-The Hub Pub site deployment
+jalgraves site deployment
 
 ## Source Code
 
-* <https://github.com/beantownpub/thehubpub>
+* <https://github.com/jalgraves/jalgraves>
 
 ## Values
 
@@ -16,13 +16,15 @@ The Hub Pub site deployment
 | aws.region | string | `""` |  |
 | aws.secretAccessKey | string | `""` |  |
 | aws.secretName | string | `""` |  |
-| containerPort | int | `3037` |  |
+| containerPort | int | `5037` |  |
 | env | string | `"dev"` |  |
-| image.name | string | `"thehubpub"` |  |
+| fullnameOverride | string | `nil` |  |
+| image.name | string | `"jalgraves"` |  |
 | image.pullPolicy | string | `"Always"` |  |
-| image.repository | string | `"jalgraves/thehubpub"` |  |
+| image.repository | string | `"jalgraves/jalgraves"` |  |
 | image.tag | string | `""` |  |
 | istio.enabled | bool | `false` |  |
+| nameOverride | string | `nil` |  |
 | regionCode | string | `""` |  |
 | replicaCount | int | `1` |  |
 | resources.limits.memory | string | `"1Gi"` |  |

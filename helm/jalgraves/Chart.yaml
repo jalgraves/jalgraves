@@ -1,8 +1,8 @@
 apiVersion: v2
-name: thehubpub
-description: The Hub Pub site deployment
+name: jalgraves
+description: jalgraves site deployment
 type: application
-version: 0.1.19
-appVersion: 0.1.19
+version: 0.1.0
+appVersion: 0.1.0-daf602a
 sources:
-- https://github.com/beantownpub/thehubpub
+- https://github.com/jalgraves/jalgraves

@@ -52,14 +52,4 @@ router.get('/contact.html', function (req, res, next) {
   res.render("main", contact.metadata)
 })
 
-router.get('/parties', function (req, res, next) {
-  const parties = pages.parties
-  res.render("main", parties.metadata)
-})
-
-router.get('/parties.html', function (req, res, next) {
-  const parties = pages.parties
-  res.render("main", parties.metadata)
-})
-
 export default router

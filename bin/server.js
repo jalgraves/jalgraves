@@ -7,7 +7,7 @@ const debug = debugLib('jalgraves:server')
  * Get port from environment and store in Express.
  */
 
-const port = normalizePort(process.env.PORT || '3037')
+const port = normalizePort(process.env.PORT || '5037')
 app.default.set('port', port);
 /**
  * Create HTTP server.

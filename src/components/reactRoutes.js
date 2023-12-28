@@ -7,7 +7,7 @@ import {
 } from "react-router-dom"
 import { AboutInfo } from "./content/about/main.js"
 import { ContactInfo } from "./content/contact/main.js"
-import { BlogContents } from "./blog/blogContents/blogContents.js"
+import { CreateBlogPost } from "./blog/blogContents/blogContents.js"
 import { Home } from "./content/main.js"
 
 export const LocationDisplay = () => {
@@ -23,7 +23,7 @@ export default function ReactRoutes() {
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="about" element={<AboutInfo/>} />
-        <Route path="blog" element={<BlogContents/>} />
+        <Route path="blog" element={<CreateBlogPost/>} />
         <Route path="contact" element={<ContactInfo/>} />
       </Routes>
       <LocationDisplay/>

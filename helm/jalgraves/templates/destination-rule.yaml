@@ -2,12 +2,12 @@
 apiVersion: networking.istio.io/v1alpha3
 kind: DestinationRule
 metadata:
-  name: {{ include "thehubpub.fullname" . }}
+  name: {{ include "jalgraves.fullname" . }}
 spec:
-  host: "{{ include "thehubpub.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local"
+  host: "{{ include "jalgraves.fullname" . }}.{{ .Release.Namespace }}.svc.cluster.local"
   trafficPolicy:
     loadBalancer:
       simple: LEAST_CONN
   subsets:
-  - name: {{ include "thehubpub.fullname" . }}
+  - name: {{ include "jalgraves.fullname" . }}
 {{- end }}

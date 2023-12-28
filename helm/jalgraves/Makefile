@@ -1,9 +1,9 @@
 .PHONY: all test clean
 
 
-name ?= thehubpub
-image ?= hubpub
-port ?= 3037
+name ?= jalgraves
+image ?= jalgraves
+port ?= ${APP_PORT}
 tag ?= $(shell grep 'appVersion:' Chart.yaml | cut -f 2 -d' ')
 SHELL := /bin/bash
 
@@ -23,7 +23,7 @@ helm/context:
 
 ## Install Helm chart
 helm/install: helm/context
-	cd helm/thehubpub && \
+	cd helm/jalgraves && \
 		helm upgrade --install $(name) . \
 		--namespace $(namespace) \
 		--set aws.secretName=${AWS_SECRET_NAME} \
@@ -53,9 +53,19 @@ template:
 helm/port_forward:
 		kubectl port-forward --namespace $(namespace) svc/$(name) $(port):$(port)
 
-stop_pf:
-		../scripts/stop_port_forward.sh $(port)
+## Stop port forwarding
+helm/stop_pf:
+		./scripts/stop_port_forward.sh $(port)
+
+## Get pod logs
+helm/logs: helm/context
+	./scripts/get_pod_logs.sh $(namespace) $(name) || true
 
 ## Create chart schema
 helm/schema_create:
-	cd helm/thehubpub && helm schema-gen values.yaml > values.schema.json
+	cd helm/jalgraves && helm schema-gen values.yaml > values.schema.json
+
+## Delete helm installation
+## Forward port to service
+helm/uninstall:
+		helm uninstall --namespace $(namespace) $(name)

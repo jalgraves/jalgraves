@@ -6,8 +6,8 @@ aws:
 
 env: dev
 image:
-  name: thehubpub
-  repository: jalgraves/thehubpub
+  name: jalgraves
+  repository: jalgraves/jalgraves
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
   tag: ""
@@ -15,7 +15,9 @@ image:
 istio:
   enabled: false
 
-containerPort: 3037
+nameOverride:
+fullnameOverride:
+containerPort: 5037
 
 regionCode: ""
 replicaCount: 1

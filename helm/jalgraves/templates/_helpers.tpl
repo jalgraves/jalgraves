@@ -2,7 +2,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "thehubpub.name" -}}
+{{- define "jalgraves.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -11,7 +11,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "thehubpub.fullname" -}}
+{{- define "jalgraves.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -27,20 +27,20 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "thehubpub.chart" -}}
+{{- define "jalgraves.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
-{{- define "thehubpub.targetPort" -}}
-{{- printf "http-%s" (include "thehubpub.name" .) | trunc 15 | trimSuffix "-" -}}
+{{- define "jalgraves.targetPort" -}}
+{{- printf "http-%s" (include "jalgraves.name" .) | trunc 15 | trimSuffix "-" -}}
 {{- end -}}
 
 {{/*
 Common labels
 */}}
-{{- define "thehubpub.labels" -}}
-helm.sh/chart: {{ include "thehubpub.chart" . }}
-{{ include "thehubpub.selectorLabels" . }}
+{{- define "jalgraves.labels" -}}
+helm.sh/chart: {{ include "jalgraves.chart" . }}
+{{ include "jalgraves.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -50,17 +50,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "thehubpub.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "thehubpub.name" . }}
+{{- define "jalgraves.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "jalgraves.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "thehubpub.serviceAccountName" -}}
+{{- define "jalgraves.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "thehubpub.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "jalgraves.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}

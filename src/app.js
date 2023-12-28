@@ -5,6 +5,7 @@ import path from "path"
 import morgan from "morgan"  // logger
 import * as indexRouter from "./routes/index.js"
 import * as contactRouter from "./routes/contact.js"
+import * as blogRouter from "./routes/blog.js"
 import { fileURLToPath } from "url"
 
 const app = express()
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.static(path.join(__dirname, "../dist/public")))
 app.use(urlRoot, indexRouter.default)
 app.use(urlRoot + "contact", contactRouter.default)
+app.use(urlRoot + "blog", blogRouter.default)
 app.use(function(req, res, next) {
   // catch 404 and forward to error handler
   next(HttpError(404))

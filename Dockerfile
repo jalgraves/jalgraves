@@ -1,4 +1,3 @@
-# FROM node:18.16.0-buster-slim AS build
 FROM node:20.9.0-buster-slim AS build
 
 RUN apt-get update  && \

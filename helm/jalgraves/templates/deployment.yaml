@@ -1,15 +1,15 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "thehubpub.fullname" . }}
-  labels: {{ include "thehubpub.labels" . | nindent 4 }}
+  name: {{ include "jalgraves.fullname" . }}
+  labels: {{ include "jalgraves.labels" . | nindent 4 }}
 
 spec:
   progressDeadlineSeconds: 300
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: 10
   selector:
-    matchLabels: {{ include "thehubpub.selectorLabels" . | nindent 6 }}
+    matchLabels: {{ include "jalgraves.selectorLabels" . | nindent 6 }}
   strategy:
     rollingUpdate:
       maxSurge: 2
@@ -17,10 +17,12 @@ spec:
     type: RollingUpdate
   template:
     metadata:
-      labels: {{ include "thehubpub.selectorLabels" . | nindent 8 }}
+      labels: {{ include "jalgraves.selectorLabels" . | nindent 8 }}
     spec:
       containers:
       - env:
+        - name: VERSION
+          value: {{ .Chart.AppVersion }}
         - name: AWS_DEFAULT_REGION
           value: {{ .Values.aws.region }}
         - name: AWS_SECRET_NAME
@@ -41,7 +43,7 @@ spec:
         name: hubpub
         ports:
         - containerPort: {{ .Values.containerPort }}
-          name: {{ include "thehubpub.targetPort" . }}
+          name: {{ include "jalgraves.targetPort" . }}
           protocol: TCP
         securityContext:
           allowPrivilegeEscalation: false
@@ -59,12 +61,12 @@ spec:
         readinessProbe:
           httpGet:
             path: /healthz
-            port: {{ include "thehubpub.targetPort" . }}
+            port: {{ include "jalgraves.targetPort" . }}
           initialDelaySeconds: 15
           failureThreshold: 3
           periodSeconds: 10
       {{- if .Values.serviceAccount.create }}
-      serviceAccountName: {{ include "thehubpub.serviceAccountName" . }}
+      serviceAccountName: {{ include "jalgraves.serviceAccountName" . }}
       {{- end }}
       dnsPolicy: ClusterFirst
       restartPolicy: Always
