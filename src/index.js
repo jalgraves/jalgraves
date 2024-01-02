@@ -29,8 +29,10 @@ topBar.render(
     pages={PAGES}
     fontColor={COLORS.white}
     fontFamily={FONTS.content}
-    barColor={COLORS.black}
+    barColor={COLORS.white}
+    hamburgerBackground={COLORS.darkGray}
     navBarLogoImgStyles={IMG_STYLES}
+    mainMenuBarBorderBottom="1px solid black"
     slideMenuBackgroundColor={COLORS.backgroundGray}
     slideMenuFontColor={COLORS.dodgerBlue}
     slideMenuFontFamily={FONTS.content}

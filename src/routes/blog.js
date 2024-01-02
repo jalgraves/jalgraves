@@ -3,19 +3,21 @@ import * as axios from "axios"
 import { appSecret } from "../utils/secrets.js"
 import { postRequest } from "../utils/request.js"
 import { urls } from "../utils/network.js"
+import { config } from '../utils/main.js'
 const router = express.Router()
+const pages = config.pages
 
-const AUTH = 'Basic ' + Buffer.from(appSecret.api_user + ':' + appSecret.api_pass).toString('base64')
+const AUTH = "Basic " + Buffer.from(appSecret.api_user + ":" + appSecret.api_pass).toString("base64")
 const axiosInstance = axios.default.create({
   baseURL: urls.contentApi,
   timeout: 1000,
-  headers: {'Content-Type': 'application/json', 'Authorization': AUTH}
+  headers: {"Content-Type": "application/json", "Authorization": AUTH}
 })
 
 async function getPosts(uri, res) {
   try {
     const response = await axiosInstance.get(uri)
-    res.status(200).json({'status': 200, 'data': response.data})
+    res.status(200).json({"status": 200, "data": response.data})
   } catch (error) {
     console.log(`getPosts: ${error}`)
     res.status(500).json({
@@ -25,8 +27,13 @@ async function getPosts(uri, res) {
   }
 }
 
-router.get("/posts", function (req, res, next) {
+router.get("/get-posts", function (req, res, next) {
   const uri = `/v1/content/blog`
+  getPosts(uri, res)
+})
+
+router.get("/get-post/:page", function (req, res, next) {
+  const uri = `/v1/content/posts/${req.params["page"]}`
   getPosts(uri, res)
 })
 
@@ -35,7 +42,6 @@ router.post("/create-post", function (req, res, next) {
   console.log(req.body)
   let data = JSON.stringify(req.body)
   const headers = {
-    "Accept": "*/*",
     "Content-Type": "application/json",
     "Authorization": AUTH
   }
@@ -51,8 +57,14 @@ router.post("/create-post", function (req, res, next) {
   }
 })
 
-router.get("/:page", function(req, res, next) {
-  res.redirect(`/${req.params["page"]}`)
+router.get('/posts/:page', function (req, res, next) {
+  const blog = pages.blog
+  res.render("main", blog.metadata)
+})
+
+router.get('/:page', function (req, res, next) {
+  const blog = pages.blog
+  res.render("main", blog.metadata)
 })
 
 export default router

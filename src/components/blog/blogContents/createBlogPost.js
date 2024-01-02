@@ -58,6 +58,7 @@ export const CreateBlogPost = () => {
           pLetterSpacing=".2rem"
           pFontWeight="900"
           pTextTransform="uppercase"
+          postPath="create-post"
           requiredFieldError="&#9757; This field is required"
           width="100%"
         />

@@ -69,6 +69,10 @@ docker/stop:
 clean:
 	rm -rf node_modules/
 
+## Update to latest version of @jalgraves/react-components-library
+jal/update:
+	npm i --save-dev @jalgraves/react-components-library
+
 ## Show available commands
 help:
 	@printf "Available targets:\n\n"
@@ -90,7 +94,3 @@ help/generate:
 
 # Silence make output
 # MAKEFLAGS += -s
-
-helm/infra/update/%:
-	echo $@
-	cd apps/helm-apps/infrastructure/$* && ls -l

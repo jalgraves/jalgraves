@@ -32,11 +32,7 @@ helm/install: helm/context
 		--set aws.region=${AWS_DEFAULT_REGION} \
 		--set env=$(env) \
 		--debug
-
-## Uninstall beantown frontend from K8s cluster
-helm/delete:
-	kubectl config use-context $(context) && \
-	helm uninstall $(name) -n $(namespace)
+	sleep 5
 
 ## Delete Helm release and redeploy
 helm/redeploy: helm/delete helm/install
@@ -50,12 +46,12 @@ template:
 		--debug
 
 ## Forward port to service
-helm/port_forward:
+helm/port_forward: helm/context
 		kubectl port-forward --namespace $(namespace) svc/$(name) $(port):$(port)
 
 ## Stop port forwarding
-helm/stop_pf:
-		./scripts/stop_port_forward.sh $(port)
+helm/stop_pf: helm/context
+	./scripts/stop_port_forward.sh $(port)
 
 ## Get pod logs
 helm/logs: helm/context
@@ -66,6 +62,11 @@ helm/schema_create:
 	cd helm/jalgraves && helm schema-gen values.yaml > values.schema.json
 
 ## Delete helm installation
-## Forward port to service
 helm/uninstall:
-		helm uninstall --namespace $(namespace) $(name)
+	./scripts/stop_port_forward.sh $(port) && \
+	kubectl config use-context $(context) && \
+		helm uninstall --namespace $(namespace) $(name) || true
+
+
+## Redeploy app
+helm/redeploy: helm/stop_pf helm/uninstall

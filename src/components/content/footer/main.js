@@ -46,7 +46,7 @@ export const Footer = () => {
       width="100vw"
     >
       <footer>
-        <img src="/images/jal.gif" alt="Jonny Graves" />
+        <img src="/images/logos/jal.gif" alt="Jonny Graves" />
         <h2>Boston Mass</h2>
         <h2>Stay Connected</h2>
         <SocialNav/>

@@ -40,7 +40,7 @@ spec:
         image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
         imagePullPolicy: Always
       {{- end }}
-        name: hubpub
+        name: jalgraves
         ports:
         - containerPort: {{ .Values.containerPort }}
           name: {{ include "jalgraves.targetPort" . }}
@@ -62,8 +62,8 @@ spec:
           httpGet:
             path: /healthz
             port: {{ include "jalgraves.targetPort" . }}
-          initialDelaySeconds: 15
-          failureThreshold: 3
+          initialDelaySeconds: 5
+          failureThreshold: 6
           periodSeconds: 10
       {{- if .Values.serviceAccount.create }}
       serviceAccountName: {{ include "jalgraves.serviceAccountName" . }}

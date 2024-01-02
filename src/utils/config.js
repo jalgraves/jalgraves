@@ -14,7 +14,6 @@ const CONFIG = {
     "dimGray": "#696969",
     "dodgerBlue": "#1e90ff",
     "gray": "#494040",
-    "hubPubBlue": "#1e90ff",
     "lightGray": "#F3F4F4",
     "navBarBlue": "rgba(5,46,102,0.90)",
     "red": "#ed1c24",
@@ -57,14 +56,14 @@ const CONFIG = {
     },
     "blog": {
       "name": "blog",
-      "icon": "faEnvelope",
+      "icon": "faInfo",
       "text": "Blog",
       "menuList": true,
       "topMenu": true,
       "metadata": {
         "title": "JALGraves Blog",
         "description": "JALGraves' blog",
-        "keywords": "tech, blog, devops, software, software development, software engineering"
+        "keywords": "tech, blog, devops, software, software development, software engineering, terraform, k8s, kubernetes, aws, eks, argo, argocd, terraform cloud, tfc"
       }
     },
     "contact": {
