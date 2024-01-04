@@ -38,8 +38,6 @@ router.get("/get-post/:page", function (req, res, next) {
 })
 
 router.post("/create-post", function (req, res, next) {
-  console.log("CREATING POST")
-  console.log(req.body)
   let data = JSON.stringify(req.body)
   const headers = {
     "Content-Type": "application/json",
@@ -58,6 +56,15 @@ router.post("/create-post", function (req, res, next) {
 })
 
 router.get('/posts/:page', function (req, res, next) {
+  const blog = pages.blog
+  res.render("main", blog.metadata)
+})
+
+router.get("/posts/blog/posts/:page", function (req, res, next) {
+  res.redirect(`/blog/posts/${req.params["page"]}`)
+})
+
+router.get('/blog/:page', function (req, res, next) {
   const blog = pages.blog
   res.render("main", blog.metadata)
 })

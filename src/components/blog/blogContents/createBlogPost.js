@@ -16,14 +16,14 @@ export const CreateBlogPost = () => {
         articleMargin="auto"
         articleMaxWidth="85vw"
         articlePadding="1rem"
-        backgroundColor="rgba(248, 248, 248, 0.5)"
+        backgroundColor="#373a47"
         borderRadius="4px"
         display="flex"
         flexFlow="column wrap"
         fontColor={COLORS.black}
         fontFamily={FONTS.content}
         h1Color={COLORS.yellow}
-        h1FontFamily={FONTS.title}
+        h1FontFamily={FONTS.headers}
         h1FontSize="3rem"
         h1FontWeight="900"
         h1LetterSpacing=".3rem"
@@ -60,6 +60,7 @@ export const CreateBlogPost = () => {
           pTextTransform="uppercase"
           postPath="create-post"
           requiredFieldError="&#9757; This field is required"
+          tags={["aws", "devops", "kubernetes", "terraform"]}
           width="100%"
         />
       </ContentSection>

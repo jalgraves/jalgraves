@@ -62,10 +62,11 @@ export const ContentContainer = (props) => {
 export const Home = () => {
   return (
     <ContentSection display="flex" flexFlow="column wrap">
-      <HeroHeader/>
-      <ContentContainer aColor={COLORS.yellow} backgroundColor={COLORS.red} borderTop={`2px solid ${COLORS.yellow}`}>
-        <h1>What the fuck?</h1>
-      </ContentContainer>
+      <HeroHeader
+        background={COLORS.dodgerBlue}
+        text="Jonny Graves"
+        subText="Software Engineer, Shit Bartender"
+      />
     </ContentSection>
   )
 }

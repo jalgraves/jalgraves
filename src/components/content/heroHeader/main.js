@@ -1,10 +1,13 @@
-import React from 'react'
-import { StyledHero } from './styles.js'
+import React from "react"
+import { StyledHero } from "./styles.js"
 
-export const HeroHeader = () => {
+export const HeroHeader = (props) => {
   return (
-    <StyledHero aria-labelledby="Hero header">
-      <h1>jalgraves</h1>
+    <StyledHero aria-details="Hero header" background={props.background}>
+      <h1>{props.text}</h1>
+      {props.subText &&
+        <h2>{props.subText}</h2>
+      }
     </StyledHero>
   )
 }

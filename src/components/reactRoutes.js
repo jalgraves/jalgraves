@@ -33,6 +33,7 @@ export default function ReactRoutes() {
         <Route path="/" element={<Home/>} />
         <Route path="about" element={<AboutInfo/>} />
         <Route path="blog" element={<BlogPosts/>} />
+        <Route path="blog/posts/blog" element={<BlogPosts/>} />
         <Route
           path="blog/posts/:slug"
           loader={({ params }) => {

@@ -32,6 +32,10 @@ router.get('/blog', function (req, res, next) {
   res.render("main", blog.metadata)
 })
 
+router.get('/github', function (req, res, next) {
+  res.redirect("https://github.com/jalgraves")
+})
+
 router.get('/menu', function (req, res, next) {
   const menu = pages.menu
   res.render("main", menu.metadata)

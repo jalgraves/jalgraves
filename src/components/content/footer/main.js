@@ -17,7 +17,7 @@ export const Footer = () => {
       display="flex"
       flexFlow="column wrap"
       fontFamily={FONTS.footer}
-      h1Color={COLORS.white}
+      h1Color={COLORS.black}
       h1FontFamily={FONTS.footer}
       h1FontSize="1.5rem"
       h1FontWeight="900"
@@ -26,7 +26,7 @@ export const Footer = () => {
       h1Padding=".5rem"
       h1LetterSpacing=".3rem"
       h1TextTransform="uppercase"
-      h2Color={COLORS.white}
+      h2Color={COLORS.black}
       h2FontFamily={FONTS.content}
       h2FontSize="1.5rem"
       h2FontWeight="600"
@@ -37,10 +37,10 @@ export const Footer = () => {
       h2Padding=".5rem"
       h3Padding="1rem"
       h3Margin="auto"
-      h3Color={COLORS.white}
+      h3Color={COLORS.black}
       margin="1rem auto 1rem auto"
       maxWidth="80vw"
-      outline={`.2rem solid ${COLORS.yellow}`}
+      outline={`.2rem solid ${COLORS.darkGray}`}
       padding="2rem"
       textAlign="center"
       width="100vw"

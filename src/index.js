@@ -24,27 +24,54 @@ const app = createRoot(container)
 const footer = createRoot(footerContainer)
 const topBar = createRoot(topBarContainer)
 
+const slideMenu = {
+  backgroundColor: COLORS.backgroundGray,
+  border: `.1rem solid ${COLORS.borderGray}`,
+  fontColor: COLORS.black,
+  fontFamily: FONTS.content,
+  footer: {
+    text: "",
+    fontFamily: FONTS.content,
+    fontColor: "green",
+    fontSize: "1rem"
+  },
+
+  linkList: {
+    borderRadius: "4px",
+    fontFamily: FONTS.content,
+    fontColor: "black",
+    fontSize: "1.5rem",
+    fontWeight: "900",
+    outline: "1px solid black",
+    margin: "2rem auto",
+    pages: PAGES,
+    position: "relative",
+    hoverColor: COLORS.dodgerBlue,
+    width: "100%",
+    iconStyle: {
+      color: COLORS.dodgerBlue,
+      fontSize: "1em"
+    }
+  },
+  header: {
+    fontFamily: FONTS.content,
+    imgSource: `${config.urls.static}/img/jal.gif`
+  }
+}
+
 topBar.render(
   <MainMenuBar
     pages={PAGES}
-    fontColor={COLORS.white}
+    fontColor={COLORS.black}
     fontFamily={FONTS.content}
     barColor={COLORS.white}
-    hamburgerBackground={COLORS.darkGray}
+    hamburgerBackground={COLORS.dodgerBlue}
     navBarLogoImgStyles={IMG_STYLES}
     mainMenuBarBorderBottom="1px solid black"
-    slideMenuBackgroundColor={COLORS.backgroundGray}
-    slideMenuFontColor={COLORS.dodgerBlue}
-    slideMenuFontFamily={FONTS.content}
-    slideMenuLinkListBorder={`.1rem solid ${COLORS.dodgerBlue}`}
-    slideMenuLinkListBorderRadius="4px"
-    hoverColor={COLORS.dodgerBlue}
+    slideMenu={slideMenu}
     mainMenuBarImgSource={`${config.urls.static}/img/jal.gif`}
-    slideMenuLogoImgSource={`${config.urls.static}/img/jal.gif`}
   />
 )
-
-
 
 if (app) {
   app.render(

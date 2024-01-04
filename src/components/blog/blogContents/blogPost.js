@@ -68,7 +68,7 @@ export const BlogPost = (props) => {
         pFontFamily={FONTS.content}
         pLineHeight="150%"
         pMargin="1rem auto"
-        pMaxWidth="75rem"
+        pMaxWidth="70rem"
         preBackground={COLORS.backgroundGray}
         preBorderRadius="1rem"
         preMargin=".5rem auto"

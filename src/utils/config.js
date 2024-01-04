@@ -1,7 +1,8 @@
 const CONFIG = {
   "static_url": "https://static.prod.beantownpub.com",
   "urls": {
-    "static": "https://static.prod.beantownpub.com"
+    "static": "https://static.prod.beantownpub.com",
+    "github": "https://github.com/jalgraves"
   },
   "colors": {
     "backgroundGray": "#F3F4F4",
@@ -56,7 +57,7 @@ const CONFIG = {
     },
     "blog": {
       "name": "blog",
-      "icon": "faInfo",
+      "icon": "faComment",
       "text": "Blog",
       "menuList": true,
       "topMenu": true,
@@ -75,6 +76,18 @@ const CONFIG = {
       "metadata": {
         "title": "Contact JALGraves",
         "description": "JALGraves' contact information",
+        "keywords": ""
+      }
+    },
+    "github": {
+      "name": "https://github.com/jalgraves",
+      "icon": "faGithub",
+      "text": "GitHub",
+      "menuList": true,
+      "topMenu": true,
+      "metadata": {
+        "title": "JALGRaves GitHub",
+        "description": "",
         "keywords": ""
       }
     }

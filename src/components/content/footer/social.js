@@ -12,7 +12,7 @@ const iconStyle = {
 export const SocialNav = () => {
   return (
     <nav style={{margin: "1rem auto"}}>
-      <a href={urls["facebook"]}><Icon iconName="faFacebook" style={iconStyle} /></a>
+      <a href={urls["github"]}><Icon iconName="faGithub" style={iconStyle} /></a>
     </nav>
   )
 }
