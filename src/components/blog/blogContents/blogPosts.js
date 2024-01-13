@@ -8,7 +8,7 @@ const COLORS = config.colors
 const FONTS = config.fonts
 
 const PostDataCard = (props) => {
-  console.log(props)
+  const tags = props.tags || ["other"]
   return (
     <StyledBlogData aria-labelledby="Blog post info and link" $backgroundColor="whitesmoke">
       <table>
@@ -17,8 +17,13 @@ const PostDataCard = (props) => {
             <td className="postTitle">{props.title}</td>
           </tr>
           <tr>
-          <td className="postAuthor">{props.author}</td>
+            <td className="postCreationDate">{props.creationDate}</td>
           </tr>
+          {props.tags &&
+          <tr>
+            <td className="postTags">{tags.join(", ")}</td>
+          </tr>
+          }
         </tbody>
       </table>
       <p>{props.summary}</p>
@@ -28,7 +33,6 @@ const PostDataCard = (props) => {
 
 const BlogPostDataCards = (props) => {
   const posts = props.posts
-  console.log(posts)
   const postsList = []
   if (posts) {
     let cnt = 1
@@ -38,7 +42,9 @@ const BlogPostDataCards = (props) => {
           <PostDataCard
             author={post["author"]}
             body={post["body"]}
+            creationDate={post["creation_date"]}
             summary={post["summary"]}
+            tags={post["tags"]}
             title={post["title"]}
             isActive={post["is_active"]}
             slug={post["slug"]}
@@ -49,7 +55,13 @@ const BlogPostDataCards = (props) => {
     }
   }
   return (
-    <ContentSection display="flex" flexFlow="row wrap">
+    <ContentSection
+      display="flex"
+      flexFlow="row wrap"
+      maxWidth="95vw"
+      width="100%"
+      justifyContent="space-evenly"
+    >
       {postsList}
     </ContentSection>
   )
@@ -74,37 +86,33 @@ export const BlogPosts = () => {
   return (
     <ContentSection display="flex" flexFlow="column wrap">
       <ContentSection
-        articleFontSize="150%"
-        articleFontWeight="bold"
-        articleLineHeight="150%"
-        articleMargin="auto"
-        articleMaxWidth="85vw"
-        articlePadding="1rem"
         backgroundColor="white"
         borderRadius="4px"
+        outline={`.1rem solid ${COLORS.black}`}
         display="flex"
-        flexFlow="row wrap"
+        flexFlow="column wrap"
         fontColor={COLORS.black}
         fontFamily={FONTS.content}
         h1Color={COLORS.yellow}
-        h1FontFamily={FONTS.title}
+        h1FontFamily={FONTS.headline}
         h1FontSize="3rem"
         h1FontWeight="900"
         h1LetterSpacing=".3rem"
         h1LineHeight="125%"
         h1Margin="auto"
-        h1Padding="1.5rem"
-        h1TextShadow="rgb(0, 0, 0) 2px 2px 6px;"
+        h1Padding="1rem"
+        h1TextTransform="uppercase"
         h2Color={COLORS.black}
-        h2FontSize="2rem"
-        h2FontWeight="bold"
+        h2FontSize="1rem"
+        h2FontWeight="900"
         h2Margin="auto"
         h2Padding="1rem"
         margin="8rem auto 2rem auto"
         maxWidth="95vw"
-        outline={`.2rem solid ${COLORS.yellow}`}
         padding="2rem"
       >
+        <h1>Stuff that could be useful</h1><br />
+        <h2>&#40;But probably not&#41;</h2>
         {state.posts ?
         <BlogPostDataCards posts={state.posts} /> :
         <ContentSection display="flex" flexFlow="row wrap">

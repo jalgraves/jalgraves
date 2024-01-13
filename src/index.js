@@ -24,25 +24,28 @@ const app = createRoot(container)
 const footer = createRoot(footerContainer)
 const topBar = createRoot(topBarContainer)
 
+const year = new Date().getFullYear()
 const slideMenu = {
   backgroundColor: COLORS.backgroundGray,
   border: `.1rem solid ${COLORS.borderGray}`,
   fontColor: COLORS.black,
   fontFamily: FONTS.content,
   footer: {
-    text: "",
+    text: `${year} Boston Mass`,
     fontFamily: FONTS.content,
-    fontColor: "green",
-    fontSize: "1rem"
+    fontColor: COLORS.black,
+    fontSize: "1.5rem",
+    fontWeight: "900",
+    textTransform: "uppercase"
   },
 
   linkList: {
     borderRadius: "4px",
     fontFamily: FONTS.content,
-    fontColor: "black",
+    fontColor: COLORS.black,
     fontSize: "1.5rem",
     fontWeight: "900",
-    outline: "1px solid black",
+    outline: `1px solid ${COLORS.black}`,
     margin: "2rem auto",
     pages: PAGES,
     position: "relative",
@@ -66,10 +69,12 @@ topBar.render(
     fontFamily={FONTS.content}
     barColor={COLORS.white}
     hamburgerBackground={COLORS.dodgerBlue}
+    hoverColor={COLORS.dodgerBlue}
     navBarLogoImgStyles={IMG_STYLES}
     mainMenuBarBorderBottom="1px solid black"
     slideMenu={slideMenu}
     mainMenuBarImgSource={`${config.urls.static}/img/jal.gif`}
+    mainMenuBarBoxShadow={`2px 2px 6px ${COLORS.borderGray}`}
   />
 )
 

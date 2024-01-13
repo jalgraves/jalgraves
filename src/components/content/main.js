@@ -65,7 +65,7 @@ export const Home = () => {
       <HeroHeader
         background={COLORS.dodgerBlue}
         text="Jonny Graves"
-        subText="Software Engineer, Shit Bartender"
+        subText="Software Engineer, Bar Enthusiast"
       />
     </ContentSection>
   )

@@ -9,7 +9,7 @@ export const StyledHero = styled.div`
   height: 420px;
   display: flex;
   flex-flow: column wrap;
-  background: ${props => props.background || "inherit"};
+  background: ${props => props.$background || "inherit"};
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

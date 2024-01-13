@@ -6,8 +6,6 @@ const COLORS = config.colors
 const FONTS = config.fonts
 
 const RenderedPost = (props) => {
-  console.log("rendering post")
-  console.log(props)
   return (
     <ContentSection display="flex" flexFlow="column wrap">
       <a href="/blog">Back to posts</a>
@@ -40,6 +38,13 @@ export const BlogPost = (props) => {
   return (
     <ContentSection display="flex" flexFlow="column wrap">
       <ContentSection
+        aColor={COLORS.darkGray}
+        aFontFamily={FONTS.headline}
+        aFontSize="150%"
+        aFontWeight="900"
+        aHoverColor={COLORS.dodgerBlue}
+        aMargin="auto"
+        aTextTransform="uppercase"
         backgroundColor="white"
         borderRadius="4px"
         display="flex"
@@ -79,9 +84,7 @@ export const BlogPost = (props) => {
       >
         {state.post ?
         <RenderedPost title={state.post.title} author={state.post.author} body={state.post.body} /> :
-        <ContentSection display="flex" flexFlow="row wrap">
-          <h1>Error Loading Blog Posts</h1>
-        </ContentSection>
+          <h1>Error Loading Blog Post</h1>
         }
       </ContentSection>
     </ContentSection>
