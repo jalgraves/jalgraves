@@ -10,6 +10,7 @@ const RenderedPost = (props) => {
     <ContentSection display="flex" flexFlow="column wrap">
       <a href="/blog">Back to posts</a>
       <h1>{props.title}</h1>
+      <h3>{props.createdDate}</h3>
       <h2>{props.author}</h2>
 
       <Markdown>
@@ -83,7 +84,7 @@ export const BlogPost = (props) => {
         preWidth="100%"
       >
         {state.post ?
-        <RenderedPost title={state.post.title} author={state.post.author} body={state.post.body} /> :
+        <RenderedPost title={state.post.title} author={state.post.author} body={state.post.body} creationDate={state.post.creationDate} /> :
           <h1>Error Loading Blog Post</h1>
         }
       </ContentSection>

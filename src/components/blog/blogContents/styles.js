@@ -24,8 +24,11 @@ export const StyledBlogData = styled.div`
       padding: 0 0 .25rem 0;
     }
   }
+  .blogData:hover {
+    background-color: ${COLORS.red};
+  }
   .postTitle {
-    color: ${COLORS.red};
+    color: ${COLORS.dodgerBlue};
     font-family: ${FONTS.headline};
     font-size: 1.5rem;
     font-weight: 700;

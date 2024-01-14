@@ -10,7 +10,7 @@ const FONTS = config.fonts
 const PostDataCard = (props) => {
   const tags = props.tags || ["other"]
   return (
-    <StyledBlogData aria-labelledby="Blog post info and link" $backgroundColor="whitesmoke">
+    <StyledBlogData aria-labelledby="Blog post info and link" className="blogData" $backgroundColor={COLORS.backgroundWhite}>
       <table>
         <tbody>
           <tr>
@@ -38,7 +38,7 @@ const BlogPostDataCards = (props) => {
     let cnt = 1
     for (const post of Object.values(posts)) {
       postsList.push(
-        <a key={post["id"]} href={`blog/posts/${post["slug"]}`}>
+        <a key={post["id"]} href={`blog/posts/${post["slug"]}`} className="blogData">
           <PostDataCard
             author={post["author"]}
             body={post["body"]}
@@ -86,9 +86,7 @@ export const BlogPosts = () => {
   return (
     <ContentSection display="flex" flexFlow="column wrap">
       <ContentSection
-        backgroundColor="white"
-        borderRadius="4px"
-        outline={`.1rem solid ${COLORS.black}`}
+        backgroundColor={COLORS.white}
         display="flex"
         flexFlow="column wrap"
         fontColor={COLORS.black}
@@ -104,6 +102,7 @@ export const BlogPosts = () => {
         h1TextTransform="uppercase"
         h2Color={COLORS.black}
         h2FontSize="1rem"
+        h2FontStyle="italic"
         h2FontWeight="900"
         h2Margin="auto"
         h2Padding="1rem"

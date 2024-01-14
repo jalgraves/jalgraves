@@ -19,7 +19,7 @@ const CONFIG = {
     "navBarBlue": "rgba(5,46,102,0.90)",
     "red": "#ed1c24",
     "shadowGray": "rgb(147 147 147 / 25%)",
-    "white": "whitesmoke",
+    "white": "#ffffff",
     "yellow": "#fcba03"
   },
   "fonts": {
@@ -27,6 +27,7 @@ const CONFIG = {
     "footer": "'Raleway', Arial, sans-serif",
     "content": "'Lato', sans-serif",
     "headline": "'Poppins', sans-serif",
+    "poppins": "'Poppins', sans-sefif",
     "gothamUltra": "'gotham-narrow-ultra', sans-sefif",
     "title": "'satisfy', sans-serif"
   },
