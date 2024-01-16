@@ -38,7 +38,7 @@ export const Footer = () => {
       h3Padding="1rem"
       h3Margin="auto"
       h3Color={COLORS.black}
-      margin="1rem auto 1rem auto"
+      margin="3rem auto 1rem auto"
       maxWidth="80vw"
       outline={`.2rem solid ${COLORS.darkGray}`}
       padding="2rem"

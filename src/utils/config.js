@@ -29,7 +29,7 @@ const CONFIG = {
     "headline": "'Poppins', sans-serif",
     "poppins": "'Poppins', sans-sefif",
     "gothamUltra": "'gotham-narrow-ultra', sans-sefif",
-    "title": "'satisfy', sans-serif"
+    "script": "'satisfy', sans-serif"
   },
   "pages": {
     "index": {
