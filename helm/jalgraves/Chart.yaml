@@ -3,6 +3,6 @@ name: jalgraves
 description: jalgraves site deployment
 type: application
 version: 0.1.0
-appVersion: 0.1.0-2cec224
+appVersion: 0.1.0
 sources:
 - https://github.com/jalgraves/jalgraves

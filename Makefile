@@ -30,6 +30,7 @@ sass:
 build: sass
 	docker build \
 		--platform linux/x86_64 \
+		--secret id=npmrc,src=.npmrc \
 		-t $(image_name):$(image_tag) \
 		--build-arg aws_region=${AWS_DEFAULT_REGION} \
 		--build-arg node_env=$(node_env) \

@@ -74,7 +74,7 @@ topBar.render(
     mainMenuBarBorderBottom="1px solid black"
     slideMenu={slideMenu}
     mainMenuBarImgSource={`${config.urls.static}/img/jal.gif`}
-    mainMenuBarBoxShadow={`2px 2px 6px ${COLORS.borderGray}`}
+    mainMenuBarBoxShadow={`2px 2px 6px ${COLORS.darkGray}`}
   />
 )
 

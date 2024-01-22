@@ -17,15 +17,15 @@ ENV NODE_ENV=${node_env}
 ENV VERSION=${version}
 
 COPY ./package* /app/
-COPY ./.npmrc /app/
+#COPY ./.npmrc /app/
 WORKDIR /app
-RUN npm ci --save-dev --production=false
+RUN --mount=type=secret,id=npmrc,target=/app/.npmrc npm ci --save-dev --production=false
+#RUN npm ci --save-dev --production=false
 COPY . ./
 
 RUN npx webpack --config webpack.config.cjs && \
     rm -rf node_modules
 
-# FROM node:18.16.0-buster-slim
 FROM node:20.9.0-buster-slim
 ARG aws_region
 ENV AWS_DEFAULT_REGION=${aws_region}
@@ -46,4 +46,3 @@ ENTRYPOINT ["/tini", "--"]
 
 USER node
 CMD ["npm", "run", "start"]
-#CMD ["VERSION=wtf", "node", "--trace-warnings", "--unhandled-rejections=strict", "./bin/server"]

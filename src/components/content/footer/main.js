@@ -17,15 +17,6 @@ export const Footer = () => {
       display="flex"
       flexFlow="column wrap"
       fontFamily={FONTS.footer}
-      h1Color={COLORS.black}
-      h1FontFamily={FONTS.footer}
-      h1FontSize="1.5rem"
-      h1FontWeight="900"
-      h1LineHeight="150%"
-      h1Margin="auto"
-      h1Padding=".5rem"
-      h1LetterSpacing=".3rem"
-      h1TextTransform="uppercase"
       h2Color={COLORS.black}
       h2FontFamily={FONTS.content}
       h2FontSize="1.5rem"

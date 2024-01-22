@@ -31,6 +31,7 @@ helm/install: helm/context
 		--set aws.secretAccessKey=${AWS_SECRET_ACCESS_KEY} \
 		--set aws.region=${AWS_DEFAULT_REGION} \
 		--set env=$(env) \
+		--set image.tag=$(image_tag) \
 		--debug
 	sleep 5
 
